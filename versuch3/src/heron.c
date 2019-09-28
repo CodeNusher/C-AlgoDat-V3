@@ -16,10 +16,9 @@ double myAbs(double val){
 }
 
 double heron(unsigned n){
-	myAbs(n);
 	unsigned resultOld = n, result = 1;
 	int i = 0;
-	while((resultOld - result) > EPSILON && (i <= 20)){
+	while(myAbs(resultOld - result) > EPSILON && (i <= 20)){
 		resultOld = result;
 		result = (resultOld + n/resultOld) / 2;
 		++i;
@@ -34,7 +33,7 @@ int main(void){
 	printf("Eingabe von n: ");
 	fflush(stdout);
 	while(scanf("%d", &n) > 0){
-		printf("\nQuadratwurzel von %d = %f", n, heron(n));
+		printf("\nQuadratwurzel von %f = %f", n, heron(n));
 	}
 
 	return 0;
