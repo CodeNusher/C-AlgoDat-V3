@@ -25,6 +25,7 @@ double heron(unsigned n)
 		result = (resultOld + (n / resultOld)) * 0.5;
 		++i;
 		printf("\nIteration %d : %f -> %f", i, resultOld, result);
+		fflush(stdout);
 	}
 	return result;
 }
@@ -38,6 +39,7 @@ int main(void)
 	{
 		printf("\nQuadratwurzel von %d ist %f", n, heron(n));
 		printf("\nEingabe von n: ");
+		fflush(stdout);
 	}
 
 	return 0;
